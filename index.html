@@ -85,6 +85,16 @@
             font-family: 'Cormorant Garamond', serif;
         }
         
+        .cover-title small {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-top: 10px;
+            color: var(--light-gold);
+            font-family: 'Cormorant Garamond', serif;
+            opacity: 0.9;
+        }
+        
         .cover-title::after {
             content: '';
             display: block;
@@ -99,7 +109,7 @@
             font-size: 1.5rem;
             margin-bottom: 60px;
             font-weight: 300;
-            max-width: 700px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             opacity: 0.9;
@@ -201,6 +211,16 @@
             font-family: 'Cormorant Garamond', serif;
         }
         
+        .page-title small {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: 300;
+            margin-top: 8px;
+            color: var(--light-gold);
+            font-family: 'Cormorant Garamond', serif;
+            opacity: 0.9;
+        }
+        
         .page-subtitle {
             font-size: 1.4rem;
             font-weight: 300;
@@ -208,6 +228,7 @@
             margin: 0 auto;
             opacity: 0.9;
             font-family: 'Cormorant Garamond', serif;
+            line-height: 1.8;
         }
         
         .container {
@@ -619,27 +640,39 @@
     </style>
 </head>
 <body>
-    <!-- 封面页 -->
+    <!-- 封面页（已添加中英文双语） -->
     <section class="cover-page" id="coverPage">
         <div class="cover-content">
-            <h1 class="cover-title">犹太文明课程创意作业展示</h1>
-            <p class="cover-subtitle">《全球视野下的犹太文明》课程学生创意作品集 - 探索犹太文化与中华文化的交融</p>
+            <h1 class="cover-title">
+                犹太文明课程创意作业展示
+                <small>Jewish Civilization Course Creative Projects Exhibition</small>
+            </h1>
+            <p class="cover-subtitle">
+                《全球视野下的犹太文明》课程学生创意作品集 - 探索犹太文化与中华文化的交融<br>
+                <span style="font-size: 0.9em; opacity: 0.8;">Collection of Student Creative Works from "Jewish Civilization in a Global Context" - Exploring the Fusion of Jewish Culture and Chinese Culture</span>
+            </p>
             <button class="explore-btn" id="exploreBtn">开始探索</button>
         </div>
     </section>
     
-    <!-- 内容页 -->
+    <!-- 内容页（已添加中英文双语） -->
     <section class="content-page" id="contentPage">
         <div class="container">
             <header class="page-header">
-                <h1 class="page-title">学生创意作品展示</h1>
-                <p class="page-subtitle">来自北京大学、清华大学等高校学生的精彩创意作品，融合犹太文化与中国传统工艺</p>
+                <h1 class="page-title">
+                    学生创意作品展示
+                    <small>Student Creative Projects Exhibition</small>
+                </h1>
+                <p class="page-subtitle">
+                    来自北京大学、清华大学学生的精彩创意作品，融合犹太文化与中国传统工艺<br>
+                    <span style="font-size: 0.9em; opacity: 0.8;">Creative works from students at Peking University, Tsinghua University, blending Jewish culture with traditional Chinese crafts</span>
+                </p>
             </header>
             
             <div class="projects-grid">
                 <!-- 项目1 -->
                 <div class="project-card fade-in">
-                    <img src="images/001.webp" alt="编织犹太娃娃" class="project-image">
+                    <img src="images/001.webp" alt="编织犹太娃娃" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">编织犹太娃娃 Knitted Jewish Doll</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学信息科学与技术学院本科生、蒙古国留学生 Enkh-Ujin Natsagdorj 恩慧同学</p>
@@ -649,13 +682,13 @@
                                 In this Jewish civilization course, I learned a lot about Jewish culture and got really interested in their clothing traditions. To show what I learned, I decided to make a wool doll of a Jewish man by hand. I carefully recreated details of the traditional clothing, like the kippah, black coat, and side curls. I wanted to use this cute and clear handmade project to share my understanding of Jewish clothing culture and explore how to mix traditional culture with modern crafts.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV1F6UABYE9P/?share_source=copy_web&vd_source=30b314ba4283e8e1fb29717bd58e874d" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV1F6UABYE9P/?share_source=copy_web&vd_source=30b314ba4283e8e1fb29717bd58e874d" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目2 -->
                 <div class="project-card fade-in">
-                    <img src="images/002.png" alt="千面晷" class="project-image">
+                    <img src="images/002.png" alt="千面晷" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">千面晷 The Thousand-Faced Sundial</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 清华大学法学院本科生 许昕月同学</p>
@@ -665,13 +698,13 @@
                                 This clock symbolizes the long course of Jewish history and its rich cultural heritage. The constant movement of the hour and minute hands reflects the resilience and vitality of the Jewish people. As a creative project, my initial goal was to design a practical device while also embedding it with profound cultural meaning. Given my prior experience with laser engraving, I decided to create a DIY Jewish cultural clock. The entire production took about three days, including time lost to material delivery delays and engraving errors that required rework. Fortunately, the project was completed on schedule. Following my instructor's advice, I later added color to the original wooden clock. By applying white glue and colored sand, the clock took on a brighter and more vibrant appearance, bringing out the cultural essence of its motifs.
                             </div>
                         </div>
-                        <a href="https://youtu.be/I3ZPJ26vVCw" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/I3ZPJ26vVCw" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目3 -->
                 <div class="project-card fade-in">
-                    <img src="images/003.webp" alt="金焰流光" class="project-image">
+                    <img src="images/003.webp" alt="金焰流光" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">金焰流光 Golden Flame Radiance</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学信息科学技术学院本科生 邱显童同学</p>
@@ -681,13 +714,13 @@
                                 This piece employs the Chinese intangible cultural heritage of cloisonné craftsmanship to create the highly symbolic Jewish Menorah. Its themes of "light" and "hope" resonate deeply with the Chinese cultural spirit of pursuing beauty and aspiring toward illumination. The distinctive metal wire outlines and granular texture of colored sand in cloisonné work not only exquisitely capture the form of the Hanukkiah but also, through the materials themselves (gold wires and mineral sands), imbue the artwork with a sense of timelessness and sanctity that complements the solemnity of its theme. The background adopts the iconic blue and white tones of Jewish culture. Like flames against a blue sky, it symbolizes the eternal nature of light. More than merely a decorative object, this work serves as a bridge for cultural exchange. Regardless of cultural background, humanity's faith in light, unity, and miracles is universally shared.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV1dwz6YGEhg/?spm_id_from=333.1387.upload.video_card.click" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV1dwz6YGEhg/?spm_id_from=333.1387.upload.video_card.click" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目4 -->
                 <div class="project-card fade-in">
-                    <img src="images/004.webp" alt="破碎的玻璃与永恒的誓言" class="project-image">
+                    <img src="images/004.webp" alt="破碎的玻璃与永恒的誓言" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">破碎的玻璃与永恒的誓言 Broken Glass and Eternal Vows</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学中国语言文学系本科生、日本留学生渡边同学</p>
@@ -697,13 +730,13 @@
                                 During Professor YANG Meng's course "Jewish Civilization in a Global Context," a lecture on Jewish weddings sparked my creative inspiration. I was captivated by the rituals I had never heard of before, and a bold idea emerged: I wanted to personally recreate a model of a "Jewish wedding scene." My creation began with the stage set. I used a picture of a synagogue as the backdrop for the bride and groom. Based on the wedding scene presented in Professor Yang Meng's PowerPoint presentation, I decorated the ceiling and surroundings with handmade grass and flowers, creating a happy yet formal atmosphere.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV11ZG1zWEyL/?spm_id_from=333.1387.homepage.video_card.click&vd_source=7b84d223896def0f82b264b4ab07459f" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV11ZG1zWEyL/?spm_id_from=333.1387.homepage.video_card.click&vd_source=7b84d223896def0f82b264b4ab07459f" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目5 -->
                 <div class="project-card fade-in">
-                    <img src="images/005.webp" alt="摩托骑行以色列" class="project-image">
+                    <img src="images/005.webp" alt="摩托骑行以色列" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">摩托骑行以色列 Motorcycle Ride in Israel</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学工学院机器人工程专业本科生刘思哲同学</p>
@@ -713,13 +746,13 @@
                                 In our course "Jewish Civilization in a Global Context", I encountered many maps of Israel with different borders. Over the course of history, these borders have been constantly changing, and many significant events for Israel have taken place along them. However, since I am in China, I do not have the opportunity to visit Israel in person and experience its borders directly. This led me to an idea: Can I use my motorcycle to ride in my local surroundings to simulate and experience the scale of Israel's borders? It was from this thought that I developed this creative assignment.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV12nL3zaEvc/?share_source=copy_web&vd_source=63811638af68b90f8b57e67e881b8cb3" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV12nL3zaEvc/?share_source=copy_web&vd_source=63811638af68b90f8b57e67e881b8cb3" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目6 -->
                 <div class="project-card fade-in">
-                    <img src="images/006.webp" alt="当城小环走进犹太文明" class="project-image">
+                    <img src="images/006.webp" alt="当城小环走进犹太文明" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">当城小环走进犹太文明 When Cheng Xiaohuan Meets Jewish Civilization</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学城市与环境学院本科生刘康依同学</p>
@@ -729,13 +762,13 @@
                                 The inspiration for this design draws from the WeChat avatar of Professor YANG Meng. Professor YANG engages in a dialogue with great artists through the paintings on the wall, and we, too, follow her gaze to learn about the Jewish people——a distant and unfamiliar nation. Thus, I emulated the composition of Professor Yang's WeChat avatar by placing a cartoon-style view of her in the bottom left corner. "Cheng Xiaohuan" is the mascot of the College of Urban and Environmental Sciences （CUES） at Peking University, representing the image of the college's students. Standing beneath the seven-branched menorah and wearing a kippah, Cheng Xiaohuan symbolizes me and other students from CUES who are studying Jewish civilization.
                             </div>
                         </div>
-                        <a href="https://b23.tv/I0aN8Ho" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://b23.tv/I0aN8Ho" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目7 -->
                 <div class="project-card fade-in">
-                    <img src="images/007.webp" alt="纸壳板上的犹太会堂" class="project-image">
+                    <img src="images/007.webp" alt="纸壳板上的犹太会堂" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">纸壳板上的犹太会堂 Synagogue on Cardboard</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学中国语言文学系本科生、韩国留学生郑瑞瑛同学</p>
@@ -745,13 +778,13 @@
                                 For my creative project in the course Jewish Civilization in a Global Context, I was inspired by the Great Synagogue in Plzen, Czech Republic. This synagogue is one of the largest in Europe and the third largest in the world. Built in the late 19th century, it stands as an outstanding example of Moorish Revival architecture. As both a religious center for the Jewish community and a testament to Jewish history and culture, its unique architectural style and profound historical background deeply attracted me and became the starting point of my exploration into Jewish culture and art.
                             </div>
                         </div>
-                        <a href="https://b23.tv/Ob3Ry2t" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://b23.tv/Ob3Ry2t" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目8 -->
                 <div class="project-card fade-in">
-                    <img src="images/008.webp" alt="犹太风情摄影棚" class="project-image">
+                    <img src="images/008.webp" alt="犹太风情摄影棚" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">犹太风情摄影棚 Jewish Photobooth Props</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学国际关系学院国际政治本科生、马来西亚留学生张意婷同学</p>
@@ -761,13 +794,13 @@
                                 I've always been curious to share my knowledge through arts & crafts, which is why I landed on the idea of creating "Jewish Photobooth Props". Designing props such as the Hamsa, Shofar, and Mezuzah was both a creative and meaningful process. Through crafting these symbols, I was able to engage with Jewish culture in a hands-on way, transforming course knowledge into something tangible. The process deepened my appreciation for the richness of tradition and allowed me to express respect and curiosity through art.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV1CZUUYMEga/" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV1CZUUYMEga/" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目9 -->
                 <div class="project-card fade-in">
-                    <img src="images/009.webp" alt="犹太特色哈拉面包灯" class="project-image">
+                    <img src="images/009.webp" alt="犹太特色哈拉面包灯" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">犹太特色哈拉面包灯 Jewish Challah Bread Lamp</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学新闻与传播学院本科生方禹琪同学</p>
@@ -777,13 +810,13 @@
                                 Challah is an essential food for the Jewish Sabbath, mostly in the shape of a braid. During the Jewish New Year, a special round Challah is eaten, symbolizing the start of the new year. Such a unique and time-specific food epitomizes a part of Jewish culture. My choice to make a Challah bread lamp first stems from my personal interest in baking. Regarding the texture of the bread, the key to Challah lies not in its fermentation, but in the braiding of its shape. Therefore, I was eager to try it out and figure out how the braids are made so tight and plump.
                             </div>
                         </div>
-                        <a href="https://b23.tv/7ItrYUf" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://b23.tv/7ItrYUf" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目10 -->
                 <div class="project-card fade-in">
-                    <img src="images/010.png" alt="3D塑韵犹太烛台" class="project-image">
+                    <img src="images/010.png" alt="3D塑韵犹太烛台" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">3D塑韵犹太烛台 3D Printed Menorah</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 清华大学新雅书院本科生曹亚奇同学</p>
@@ -793,13 +826,13 @@
                                 In the course "Jewish Civilization," I was deeply inspired by the symbolism and resilience of Jewish culture, leading me to create a nine-branched hanukkiah model using 3D printing technology. As a significant symbol of Jewish culture, the menorah represents light and hope, reflecting the Jewish people's enduring faith throughout history. I chose 3D printing for its ability to accurately replicate the intricate patterns and symmetrical structure of the menorah while ensuring durability for long-term display.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV16rjdzSE8K/" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV16rjdzSE8K/" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目11 -->
                 <div class="project-card fade-in">
-                    <img src="images/011.png" alt="Hamsa之手" class="project-image">
+                    <img src="images/011.png" alt="Hamsa之手" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">Hamsa之手 Hamsa Hand</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学数学与科学学院本科生耿依涵同学</p>
@@ -809,13 +842,13 @@
                                 The Hamsa hand, known in Hebrew as the "Hamesh Hand", is a protective amulet in Jewish culture. Today, many ornaments and pendants are inspired by this symbol. The Hamsa hand is believed to ward off the "evil eye", and some also associate it with God's "strong hand" that brought the Israelites out of Egypt.For this assignment, I designed my own version of the Hamsa hand and carved it into a rubber stamp. In the design, I drew inspiration from patterns I found online while incorporating numerous Jewish elements.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV1T3UjYnEcF/" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV1T3UjYnEcF/" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目12 -->
                 <div class="project-card fade-in">
-                    <img src="images/012.webp" alt="安妮的秘密小屋" class="project-image">
+                    <img src="images/012.webp" alt="安妮的秘密小屋" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">安妮的秘密小屋 Anne's Secret Annex</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学中国语言文学系本科生许晋懿同学</p>
@@ -825,13 +858,13 @@
                                 This creative work is based on my reading and personal reflection on The Diary of Anne Frank.As a firsthand account of the anti-humanity atrocities committed by the Nazis during World War II, and as traces of a kind and optimistic young girl who once lived in this world, The Diary of Anne Frank has been included in the Ministry of Education's recommended reading list. It was through this recommendation that I first encountered the book. I read it initially during elementary school, at a time when my understanding of World War II history and the Holocaust was still vague. Though I struggled to fully empathize with the experiences described, I could deeply relate to the pain of being forcibly cut off from nature.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV1mtzGYDE95/?spm_id_from=333.999.0.0&vd_source=29c626aa51b94c593c8cea84b42ae108" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV1mtzGYDE95/?spm_id_from=333.999.0.0&vd_source=29c626aa51b94c593c8cea84b42ae108" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目13 -->
                 <div class="project-card fade-in">
-                    <img src="images/013.webp" alt="当〈文明6〉与以色列相遇" class="project-image">
+                    <img src="images/013.webp" alt="当〈文明6〉与以色列相遇" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">当〈文明6〉与以色列相遇 When Civilization VI Meets Israel</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学数学科学学院本科生陈秋阳同学</p>
@@ -841,13 +874,13 @@
                                 In the course "Jewish Civilization in a Global Context," I use Civilization VI as a medium to translate the spiritual legacy of ancient Israel and the experience of the modern state into an interactive ruleset. The civilization ability, Exodus, centers on migration and perseverance, realized as greater mobility and stronger desert adaptation. The unique unit, Maccabean Warriors, embodies faith-driven mobilization and courageous resistance, represented by Faith-based recruitment and higher melee strength. The unique building, the Synagogue, inherits its historical role across religion, education, and community, designed to steadily generate Science, Culture, and diverse Great Person points as a city's cultural--intellectual engine.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV1omzvYNE95/?share_source=copy_web&vd_source=e8a23bd3370cf7bdd6646d9b6150c2e3" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV1omzvYNE95/?share_source=copy_web&vd_source=e8a23bd3370cf7bdd6646d9b6150c2e3" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
                 
                 <!-- 项目14 -->
                 <div class="project-card fade-in">
-                    <img src="images/014.webp" alt="耶路撒冷之夜" class="project-image">
+                    <img src="images/014.webp" alt="耶路撒冷之夜" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">耶路撒冷之夜 Jerusalem Night</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学国际关系学院本科生、俄罗斯留学生Timur Mansurov同学</p>
@@ -857,13 +890,13 @@
                                 Professor YANG Meng introduced Hanukkah in our course, and I also saw many creative works from previous students. A number of impressive DIY projects inspired me to think about whether I could also use art as a way to express my understanding of Jewish culture. To achieve this, I searched online for a large number of related images and selected suitable elements, eventually finalizing a complete design. Considering the characteristics of tufting, I prioritized patterns with larger color blocks and simpler lines, which would produce a better final result.
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV1SkBtYaEHR/?vd_source=cd9c18403b75007e7e8749f8288b56b2" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV1SkBtYaEHR/?vd_source=cd9c18403b75007e7e8749f8288b56b2" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                 <!-- 项目15 -->
                 <div class="project-card fade-in">
-                    <img src="images/015.jpg" alt="犹太传统婚戒" class="project-image">
+                    <img src="images/015.jpg" alt="犹太传统婚戒" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">犹太传统婚戒 Traditional Jewish Wedding Ring</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 清华大学新雅书院计算机专业本科生姚宇辰同学</p>
@@ -873,15 +906,15 @@
                                 Jewish Civilization Course from Prof. YANG Meng has provided me a wealth of content about Jewish culture that I had never explored in depth before, including their unique history, festival traditions, religious customs, and traditional food. The class offered not only the expansion of knowledge but also pleasant surprises of cultural experience, allowing me to truly appreciate how a civilization has preserved its resilience and creativity throughout a long history. Whether it is the symbolic meaning behind dietary practices or the narratives and memories embodied in festival customs, everything felt novel and deeply fascinating. This course is rich in content and broad in perspective and it has been an extremely rare learning experience, one that truly made me feel that the world is far bigger than I had imagined. I thoroughly enjoyed this course and highly recommend it!
                             </div>
                         </div>
-                        <a href="https://youtu.be/jQbBSRdRxOU" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/jQbBSRdRxOU" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
-                <!-- 项目16 -->
+                <!-- 项目16（修复了未闭合的div和标题拼写） -->
                 <div class="project-card fade-in">
-                    <img src="images/016.jpg" alt="犹太文化艺术日历" class="project-image">
+                    <img src="images/016.jpg" alt="犹太文化艺术日历" class="project-image" loading="lazy">
                     <div class="project-content">
-                        <h2 class="project-title">犹太文化艺术日历 Jewish Culture & Art Calendarg</h2>
+                        <h2 class="project-title">犹太文化艺术日历 Jewish Culture & Art Calendar</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 清华大学建筑系本科生庄静同学</p>
                         <div class="project-description">
                             <p>‘犹太’这个词，既熟悉又陌生，在选课系统看到这门课的时候，便以纯粹好奇的态度选课。在预料之外，这门课成为了本科生涯中最感受深刻的非专业课。在兴趣知识上，这门课从习俗、节日、食物、观念等全方面展现了犹太文化的习俗与智慧，由浅入深循序渐进，让我们带着一个欣赏并且开放的态度了解犹太复杂的历史。课堂上所了解的知识，使得我们在观看当代新闻时有一层基本的了解支撑我们的独立判断，更能客观、接近真实地了解事件，不会因不清楚而认为不重要，又或者被激进言论带偏。在这个学习犹太民族文化的过程，我不单单在知识储备上得到了增长，更在个人独立思考的能力的到了很大程度的强化，相信对于未来在国际视野、国际关系的了解和当代冲突的思辨上皆会有深远的影响。</p>
@@ -889,13 +922,13 @@
                                 The word “Jewish” feels both familiar and unfamiliar. When I first saw this course in the registration system, I chose it out of pure curiosity. Unexpectedly, it became the most impactful elective course of my undergraduate years. In terms of knowledge and interest, the course comprehensively presented Jewish culture and wisdom through customs, festivals, food, and beliefs. It guided us step by step, from the surface to deeper layers, helping us approach the complex history of the Jewish people with an appreciative and open mindset.The knowledge gained in class has provided a foundational framework that supports independent judgment when engaging with contemporary news. It allows us to understand events more objectively and closer to their reality, rather than dismissing them due to a lack of understanding or being misled by extreme rhetoric. In the study of Jewish culture, I not only have expanded my knowledge base but also have significantly strengthened my ability to think independently. I believe this will have a lasting influence on my understanding of global perspectives, international relations, and critical reflection on contemporary conflicts.
                             </div>
                         </div>
-                        <a href="https://youtu.be/n5y4sUf3iE0" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/n5y4sUf3iE0" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
-                </div
+                </div>
 
                 <!-- 项目17 -->
                 <div class="project-card fade-in">
-                    <img src="images/017.jpg" alt="主题冰箱贴" class="project-image">
+                    <img src="images/017.jpg" alt="主题冰箱贴" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">主题冰箱贴 Themed Fridge Magnets</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学光华管理学院本科生支天鑫同学</p>
@@ -905,13 +938,13 @@
                                 The Torah is the first part of the Tanakh (the Jewish Bible), forming the complete canonical system of Jewish faith together with the Prophets and the Writings. It is not merely a book of law but serves as the core vehicle of Jewish spiritual and national identity. Its transmission and recitation permeate the entirety of Jewish history and collective memory, regarded as an eternal guide for life. The Torah is preserved and used in the form of meticulously crafted parchment scrolls. When reading the Torah, worshippers employ a specialized pointer called a Yad, using the index finger to guide their eyes line by line. This practice avoids direct contact with the sacred text, expressing the utmost reverence and protection for the holy words. The scroll itself is often adorned with ornate decorations, such as silver crowns, shields, bells, and breastplates. These are not merely works of art but tangible symbols of the Torah's sanctity and glory. In my painting, a person is depicted holding an open Torah scroll with both hands. This gesture is commonly seen in synagogue rituals, particularly during the moments of raising and displaying the scroll before and after its reading. It symbolizes the public transmission of the law, the sharing of wisdom, and the unity of the faith community. Every line and stroke of the Torah is regarded as sacred and immutable, and the act of lifting the Torah scroll entrusts eternal truth to the present moment, allowing ancient commandments to resonate anew in the heart of each generation.
                             </div>
                         </div>
-                        <a href="https://mp.weixin.qq.com/s/98QyajHzeEPlRk2ULdSsBA0" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看更多</a>
+                        <a href="https://mp.weixin.qq.com/s/98QyajHzeEPlRk2ULdSsBA0" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看更多</a>
                     </div>
                 </div>
 
                 <!-- 项目18 -->
                 <div class="project-card fade-in">
-                    <img src="images/018.jpg" alt="复得之星——复原天津犹太会堂" class="project-image">
+                    <img src="images/018.jpg" alt="复得之星——复原天津犹太会堂" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">复得之星——复原天津犹太会堂 The Restored Star——A MOC Reconstruction of the Tianjin Synagogue</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学第一医院谭昊远本科生同学 </p>
@@ -921,13 +954,13 @@
                                 The course "Jewish Civilization in a Global Context" has transformed my perception of Jewish civilization from flat labels into encounters with real, living people. From Jewish Classics to  the survival philosophies of the diaspora, what I see now is not merely a history of suffering, but a tenacious vitality growing within the cracks of history. By studying diaspora Jewish communities, I have come to understand how they maintained a dialogue with the world while adhering to their spiritual core. What this course left me with was not just knowledge in a global context, but a sense of historical warmth that invites us to move beyond stereotypes and to approach the “other” with respect and understanding.
                             </div>
                         </div>
-                        <a href="https://youtu.be/EJWlwLn_Fy8" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/EJWlwLn_Fy8" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                 <!-- 项目19 -->
                 <div class="project-card fade-in">
-                    <img src="images/019.jpg" alt="致敬门德尔松：犹太文明元素小提琴制作" class="project-image">
+                    <img src="images/019.jpg" alt="致敬门德尔松：犹太文明元素小提琴制作" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">致敬门德尔松：犹太文明元素小提琴制作 A Tribute to Felix Mendelssohn——Crafting a Violin with Jewish Cultural Motif</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学经济学院本科生李昕航 </p>
@@ -937,13 +970,13 @@
                                 This creative project involves crafting a violin infused with elements of Jewish civilization, paying tribute to the musician Felix Mendelssohn and the cultural heritage he represents. Mendelssohn’s music stands out uniquely in the Romantic era—its fresh and elegant style stems not only from his profound family traditions but also from his disciplined and meticulous character. His works retain the rigorous structure of classical forms while brimming with the vitality of natural imagery, embodying a harmonious blend of rationality and poetic sensibility. Despite his untimely death, his music continues to radiate a spirit of hope and humanism.
                             </div>
                         </div>
-                        <a href="https://youtu.be/mPqYzCtRxDk?feature=shared" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/mPqYzCtRxDk?feature=shared" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                 <!-- 项目20 -->
                 <div class="project-card fade-in">
-                    <img src="images/020.jpg" alt="黄色新伤" class="project-image">
+                    <img src="images/020.jpg" alt="黄色新伤" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">黄色新伤 Yellow, New Wounds</h2>
                         <p class="project-author"><i class="fas fa-user"></i> 北京大学心理与认知科学学院本科生秦嘉嵘同学 </p>
@@ -953,13 +986,13 @@
                                 I chose this course “Jewish Civilization in a Global Context” because I wanted to hear perspectives different from the dominant narratives on the Chinese internet and to gain a more comprehensive understanding of the realities of the conflicts. As reflected in my project, the course helped me see the hardships endured by the Jewish people during the conflict. In addition, Prof. YANG Meng invited Jewish scholars and students from abroad to share how Jewish communities outside Israel have also been affected by the ongoing situation. Through learning about the global landscape from a Jewish perspective, I gradually developed a more objective understanding of history and a deeper empathy for the civilians on both sides who are impacted by the conflict. The lectures on Jewish traditions and historical origins also introduced me to ways of life quite different from those in my own culture. The course content was both engaging and enriching for my cultural horizon.
                             </div>
                         </div>
-                        <a href="https://youtu.be/Z3RPfoJoS0w" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/Z3RPfoJoS0w" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                 <!-- 项目21 -->
                 <div class="project-card fade-in">
-                    <img src="images/021.jpg" alt="掌心里的庇护所：摩西会堂微缩积木" class="project-image">
+                    <img src="images/021.jpg" alt="掌心里的庇护所：摩西会堂微缩积木" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">掌心里的庇护所：摩西会堂微缩积木 A Miniature Brick Model of Ohel Moshe Synagogue</h2>
                         <p class="project-author"><i class="fas fa-user"></i>北京大学第二临床医学院本科生平措旺扎同学 </p>
@@ -969,13 +1002,13 @@
                                 My work is based on the Ohel Moshe Synagogue of the Shanghai Jewish Refugees Museum. Through compression, simplification, and reconstruction, I translated a religious building laden with historical memory into a smaller, tangible brick model. The Ohel Moshe Synagogue is a crucial witness to Shanghai sheltering Jewish refugees during World War II; it witnessed a city opening its doors to the homeless and recorded the refugees' efforts to maintain faith, mutual aid, and dignity during arduous times. The work retains the synagogue’s most recognizable elements—the red brick façade, blue window frames, slender architectural proportions, and slanted roof—allowing the historical space to re-enter the contemporary field of vision in a lighter, more approachable manner. Through the blocks, the work attempts to allow viewers to understand the stories behind the architecture more intuitively, making remembrance no longer merely text and display boards, but a small, tangible entity that can be held, gazed upon, and provoke thought.
                             </div>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=S53rbeAZQbg" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.youtube.com/watch?v=S53rbeAZQbg" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                 <!-- 项目22 -->
                 <div class="project-card fade-in">
-                    <img src="images/022.jpg" alt="从音乐走进犹太文明" class="project-image">
+                    <img src="images/022.jpg" alt="从音乐走进犹太文明" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title"> 从音乐走进犹太文明 A Music Tour of Jewish Civilization</h2>
                         <p class="project-author"><i class="fas fa-user"></i>北京大学化学与分子工程学院本科生张宇彤同学 </p>
@@ -985,15 +1018,15 @@
                                 In daily life, I often record memories and express emotions by making pop-up books or handcrafted ornaments and wall hangings. Based on the insights gained from class content and guest lecture, I chose the theme of "A Music Tour of Jewish Civilization", attempting to connect the development history of Jewish music with the history of Jewish civilization along the timeline. This work creatively integrates three-dimensional mechanisms and music playback modules, greatly enhancing the visual and auditory experience. It leads the viewers to personally experience the history of Jewish music and the development of Jewish civilization, savor the resilience of Jewish music in "holding fast in turmoil" and the adaptability of "innovating in holding fast", and thus approach the spiritual connotation of the Jewish people. 
                             </div>
                         </div>
-                        <a href="https://youtu.be/4uuyv5AVI50" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/4uuyv5AVI50" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
-                <!-- 项目23 -->
+                <!-- 项目23（修正英文标题拼写） -->
                 <div class="project-card fade-in">
-                    <img src="images/023.jpg" alt="赏析苏打绿作品《他举起右手点名》" class="project-image">
+                    <img src="images/023.jpg" alt="赏析苏打绿作品《他举起右手点名》" class="project-image" loading="lazy">
                     <div class="project-content">
-                        <h2 class="project-title"> 赏析苏打绿作品《他举起右手点名》 nterpretation of Sodagreen's Work "He Raised His Right Hand to Call Roll"</h2>
+                        <h2 class="project-title"> 赏析苏打绿作品《他举起右手点名》 Interpretation of Sodagreen's Work "He Raised His Right Hand to Call Roll"</h2>
                         <p class="project-author"><i class="fas fa-user"></i>北京大学本科生蒋印武同学（艺名） </p>
                         <div class="project-description">
                             <p>我的作业灵感来自于苏打绿作品《他举起右手点名》的解读视频（up主@Lumos___ 做的解析BV1Yh4y1b7mn），由杨梦老师在一次课间播放。我被苏打绿的编曲和歌词吸引。作为一个非相关专业的学生，我希望能读懂歌词的含义，结合在杨梦课上的所学所感，让更多的朋友了解歌曲传达的思想。歌词中提及了毒蜘蛛、指环、六角星、萤火虫等诸多意象，我尝试将它们溯源，并给出我的理解。这首歌曲不仅揭示了二战期间犹太人在集中营里遭受的行为暴力，还影射了当今世界依然存在的思想暴力和言语暴力，我们仍需对偏见和谣言进行反思。</p>
@@ -1001,13 +1034,13 @@
                                 My inspiration comes from an interpretive video about Sodagreen's Work "He Raised His Hand to Call Roll", which was played by Prof. YANG Meng during a class break. I was captivated by its musical arrangement and lyrics. As a student outside this field, I hope to understand the meaning of the lyrics and, drawing on what I’ve learned and been inspired by in Professor YANG Meng’s course, help more people understand the ideas the song conveys.The lyrics mention various symbols, such as the poisonous spider, the ring, the star of David, and fireflies. I have attempted to trace their origins and provide my interpretation. The song not only reveals the behavioral violence endured by Jews in concentration camps during World War II, but also alludes to the ideological and verbal violence that still persists in today's world, making us to reflect on prejudice and rumors.
                             </div>
                         </div>
-                        <a href="https://youtu.be/PwtoHuDP6gU" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/PwtoHuDP6gU" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                 <!-- 项目24 -->
                 <div class="project-card fade-in">
-                    <img src="images/024.jpg" alt="分海之光" class="project-image">
+                    <img src="images/024.jpg" alt="分海之光" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">分海之光 Light of the Parted Sea</h2>
                         <p class="project-author"><i class="fas fa-user"></i>北京大学生命科学学院本科生、马来西亚留学生洪崇晏同学 </p>
@@ -1017,13 +1050,13 @@
                                 This piece centers on the figure of Moses, portrayed holding a staff in one hand and the tablets in the other. His pose is inspired by classic depictions of the moment he parts the Red Sea—an instant when divine power manifests and the sea recedes. To make this senseof “divine power” more tangible, I incorporated small lights into the design. Arranged around the Star of David structure, the lights radiate outward, creating a visual effect that symbolizes both revelation and the illumination of divine wisdom. In Jewish culture, light also represents hope and the continuity of life, which adds another layer of meaning to the work.
                             </div>
                         </div>
-                        <a href="https://youtu.be/VjIt135yJxY" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/VjIt135yJxY" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                  <!-- 项目25 -->
                 <div class="project-card fade-in">
-                    <img src="images/025.jpg" alt="手绘哈尔滨犹太旧址群" class="project-image">
+                    <img src="images/025.jpg" alt="手绘哈尔滨犹太旧址群" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">手绘哈尔滨犹太旧址群 Hand-painted Harbin's Jewish Heritage</h2>
                         <p class="project-author"><i class="fas fa-user"></i>北京大学国际关系学院本科生钱堃一同学 </p>
@@ -1033,13 +1066,13 @@
                                 In daily life, I am a heritage enthusiast with a particular passion for immovable cultural relics in China and around the world. Over the years, I have personally visited nearly 1,000 national key cultural heritage sites. During my exploration of Harbin's historical sites, I noticed a well-preserved cluster of Jewish activity sites. These buildings are rare in China as they are among the few historical structures closely tied to Jewish history and the only ones listed as national key cultural heritage sites. These buildings carry and reflect a unique history: some Jews fleeing persecution in Tsarist Russia settled in Northeast China via the Chinese Eastern Railway. They invested in banks, post offices, and other public facilities in Harbin, contributing to the city's development and providing valuable insights into China's modernization. However, this history remains little known in China today. Therefore, it is very meaningful to present these historical buildings and their stories in a way I am familiar with.
                             </div>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=8AMvIqXigEE&t=1s" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.youtube.com/watch?v=8AMvIqXigEE&t=1s" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                 <!-- 项目26 -->
                 <div class="project-card fade-in">
-                    <img src="images/026.png" alt="犹太新年剪纸" class="project-image">
+                    <img src="images/026.png" alt="犹太新年剪纸" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">犹太新年剪纸 Rosh Hashanah Papercutting Art</h2>
                         <p class="project-author"><i class="fas fa-user"></i>北京大学中文系本科生郑沐涵同学 </p>
@@ -1049,13 +1082,13 @@
                                 This assignment draws inspiration from traditional food of the Jewish New Year, such as the head of a fish, pomegranates, and apples, which hold symbolic meanings in both Jewish and Chinese cultures. Notably, these elements also frequently appear in traditional Chinese Lunar New Year papercutting art, particularly in window flower designs. My work aims to bridge these two civilizations by creating a Jewish New Year-themed papercutting piece. The design centers on a shofar (ram’s horn), symbolizing Jewish traditions, and integrates key elements from Jewish New Year rituals: the fish head (representing progress and leadership), apples dipped in honey (symbolizing a sweet year), and pomegranates (signifying abundance and virtue). To highlight cultural fusion, the artwork incorporates Chinese motifs like cloud patterns and lotus flowers, alongside the Star of David, a central symbol of Judaism.This composition reflects a shared aspiration for mutual respect between cultures and a collective pursuit of harmony and prosperity. By merging visual elements from both traditions, it celebrates the beauty of cross-cultural dialogue while honoring universal values of hope and renewal.
                             </div>
                         </div>
-                        <a href="https://mp.weixin.qq.com/s/lLXlBsrpTciJHahV6B4iSg" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看更多</a>
+                        <a href="https://mp.weixin.qq.com/s/lLXlBsrpTciJHahV6B4iSg" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看更多</a>
                     </div>
                 </div>
 
                 <!-- 项目27 -->
                 <div class="project-card fade-in">
-                    <img src="images/027.jpg" alt="光明节九枝烛台冰箱贴" class="project-image">
+                    <img src="images/027.jpg" alt="光明节九枝烛台冰箱贴" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">光明节九枝烛台冰箱贴 Enlightening Hanukkiah Fridge Magnet</h2>
                         <p class="project-author"><i class="fas fa-user"></i>北京大学国际关系学院本科生钱堃一同学 </p>
@@ -1065,13 +1098,13 @@
                                 During the class, Prof. YANG Meng showed a video about the Hanukkiah, explaining how the number of lit candles indicates which day of Hanukkah it is. I had previously seen a video of magnet-controlled lights，so I thought it would be interesting to combine this feature with a fridge magnet menorah, creating an effect where the candles light up one by one. 
                             </div>
                         </div>
-                        <a href="https://www.bilibili.com/video/BV1m7L3zeEKM/?vd_source=46b416b151961aeea25780ed33b24c56" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://www.bilibili.com/video/BV1m7L3zeEKM/?vd_source=46b416b151961aeea25780ed33b24c56" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                 <!-- 项目28 -->
                 <div class="project-card fade-in">
-                    <img src="images/028.jpg" alt="白城之魂——特拉维夫大犹太会堂" class="project-image">
+                    <img src="images/028.jpg" alt="白城之魂——特拉维夫大犹太会堂" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">白城之魂——特拉维夫大犹太会堂 Neshoma of White City——Eternal Covenant under Modernism</h2>
                         <p class="project-author"><i class="fas fa-user"></i>北京大学信息科学技术学院本科生金雨桐同学 </p>
@@ -1081,13 +1114,13 @@
                                 I chose to replicate the Great Synagogue of Tel Aviv. On one hand, its geometric form is relatively concise and conducive to model making; the square roof can also be designed to be detachable to reveal the interior. On the other hand, this synagogue holds significant cultural symbolism. Influenced by Tel Aviv’s "White City," the synagogue’s exterior was renovated to feature a modern Bauhaus style. This reflects the Zionist founders' aspiration to create the "New Jew" and their determination to integrate into the vanguard of global thought. Conversely, its interior remains Orthodox, adhering to millennia-old laws and ritual traditions, representing the unchanging spiritual core of Judaism. This intense contrast between modern style and traditional faith perfectly embodies a central issue facing Jewish civilization today: how to balance the tide of reform with ancient tradition within a new nation-state.
                             </div>
                         </div>
-                        <a href="https://youtu.be/49GxSEuqggQ" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/49GxSEuqggQ" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
 
                 <!-- 项目29 -->
                 <div class="project-card fade-in">
-                    <img src="images/029.jpg" alt="AI电影《强拍》" class="project-image">
+                    <img src="images/029.jpg" alt="AI电影《强拍》" class="project-image" loading="lazy">
                     <div class="project-content">
                         <h2 class="project-title">AI电影《强拍》 The Downbeat</h2>
                         <p class="project-author"><i class="fas fa-user"></i>北京大学光华管理学院本科生梁轩赫</p>
@@ -1097,7 +1130,7 @@
                                 In creating "The Downbeat," I chose to shift the focus away from grand historical narratives and instead center on the everyday life of an ordinary contemporary American Jewish woman—Sarah. By intricately depicting her complete emotional journey from being misunderstood to rising and rebuilding herself, I aim to reveal that the tensions between civilizations do not merely exist in history books. Rather, they permeate the subtle glances, careless words, and unspoken silences in our daily lives. The story does not end with accusation but points toward reconstruction and rebirth. My protagonist, Sarah, ultimately chooses the law—the cornerstone of modern civilization—as her weapon to defend her dignity. She transforms what was once a forced "rest" in her family’s memory into a powerful, rhythm-defining "downbeat" in the symphony of her personal destiny.
                             </div>
                         </div>
-                        <a href="https://youtu.be/HVoinAruxR4" class="project-video" target="_blank"><i class="fas fa-play-circle"></i> 观看视频</a>
+                        <a href="https://youtu.be/HVoinAruxR4" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
             </div>
