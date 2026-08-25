@@ -637,6 +637,334 @@
                 height: 50px;
             }
         }
+
+
+        /* 项目30：ShalomShtickers 多图作品画廊 */
+        .project-image-wrap {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .project-image-wrap .project-image {
+            border-bottom: none;
+            display: block;
+        }
+
+        .gallery-count-badge {
+            position: absolute;
+            right: 16px;
+            bottom: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 13px;
+            border: 1px solid rgba(240, 211, 122, 0.5);
+            border-radius: 999px;
+            color: var(--light-gold);
+            background: rgba(10, 21, 37, 0.82);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.28);
+            z-index: 2;
+        }
+
+        .project-gallery-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: var(--transition);
+            font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .project-gallery-btn:hover {
+            background: var(--accent-gold);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .project-gallery-btn i {
+            margin-right: 2px;
+        }
+
+        .gallery-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            padding: 0;
+            background:
+                radial-gradient(circle at 50% 30%, rgba(42, 82, 152, 0.24), transparent 42%),
+                rgba(4, 10, 18, 0.96);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .gallery-modal.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .gallery-shell {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-header {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 14px 28px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+            background: rgba(10, 21, 37, 0.72);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .gallery-title-group {
+            min-width: 0;
+        }
+
+        .gallery-title {
+            color: var(--light-gold);
+            font-size: 1.35rem;
+            font-weight: 600;
+            line-height: 1.25;
+            font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+        }
+
+        .gallery-subtitle {
+            margin-top: 4px;
+            color: rgba(245, 245, 245, 0.58);
+            font-size: 0.88rem;
+        }
+
+        .gallery-close {
+            width: 44px;
+            height: 44px;
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-close:hover {
+            color: var(--dark-bg);
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            transform: rotate(5deg);
+        }
+
+        .gallery-stage {
+            position: relative;
+            flex: 1;
+            min-height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px 92px;
+            overflow: hidden;
+        }
+
+        .gallery-main-image {
+            display: block;
+            max-width: min(1100px, 100%);
+            max-height: calc(100vh - 230px);
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.02);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 52px;
+            height: 52px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-50%);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 50%;
+            background: rgba(10, 21, 37, 0.68);
+            color: white;
+            font-size: 1.25rem;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: var(--transition);
+        }
+
+        .gallery-nav:hover {
+            color: var(--dark-bg);
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .gallery-prev {
+            left: 24px;
+        }
+
+        .gallery-next {
+            right: 24px;
+        }
+
+        .gallery-footer {
+            padding: 14px 22px 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(8, 17, 29, 0.86);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .gallery-counter {
+            margin-bottom: 11px;
+            text-align: center;
+            color: rgba(245, 245, 245, 0.56);
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.13em;
+        }
+
+        .gallery-counter strong {
+            color: var(--light-gold);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            justify-content: flex-start;
+            gap: 9px;
+            overflow-x: auto;
+            padding: 4px 3px 7px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(212, 175, 55, 0.5) transparent;
+        }
+
+        .gallery-thumbnail {
+            width: 70px;
+            height: 54px;
+            flex: 0 0 auto;
+            padding: 0;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 5px;
+            background: var(--card-bg);
+            opacity: 0.52;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .gallery-thumbnail:hover {
+            opacity: 0.88;
+            transform: translateY(-2px);
+        }
+
+        .gallery-thumbnail.active {
+            opacity: 1;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.28);
+            transform: translateY(-2px);
+        }
+
+        .gallery-thumbnail img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-header {
+                min-height: 68px;
+                padding: 12px 15px;
+            }
+
+            .gallery-title {
+                font-size: 1.08rem;
+            }
+
+            .gallery-subtitle {
+                font-size: 0.76rem;
+            }
+
+            .gallery-close {
+                width: 40px;
+                height: 40px;
+            }
+
+            .gallery-stage {
+                padding: 16px 12px 70px;
+            }
+
+            .gallery-main-image {
+                max-height: calc(100vh - 245px);
+            }
+
+            .gallery-nav {
+                top: auto;
+                bottom: 12px;
+                width: 44px;
+                height: 44px;
+                transform: none;
+            }
+
+            .gallery-nav:hover {
+                transform: none;
+            }
+
+            .gallery-prev {
+                left: calc(50% - 56px);
+            }
+
+            .gallery-next {
+                right: calc(50% - 56px);
+            }
+
+            .gallery-footer {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .gallery-thumbnail {
+                width: 60px;
+                height: 47px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1133,6 +1461,27 @@
                         <a href="https://youtu.be/HVoinAruxR4" class="project-video" target="_blank" rel="noopener noreferrer"><i class="fas fa-play-circle"></i> 观看视频</a>
                     </div>
                 </div>
+
+                <!-- 项目30 -->
+                <div class="project-card fade-in">
+                    <div class="project-image-wrap">
+                        <img src="images/30 (1).jpeg" alt="ShalomShtickers犹太文明表情包" class="project-image" loading="lazy">
+                        <span class="gallery-count-badge"><i class="fas fa-images"></i> 17 张作品</span>
+                    </div>
+                    <div class="project-content">
+                        <h2 class="project-title">ShalomShtickers 犹太文明表情包</h2>
+                        <p class="project-author"><i class="fas fa-user"></i> 北京大学经济学院本科生 梁芷菀同学</p>
+                        <div class="project-description">
+                            <p>我是北京大学经济学院本科生梁芷菀。很幸运这一学期选到《全球视野下的犹太文明》通识课程，在杨梦老师风趣幽默、与时俱进的讲授中收获了很多——不仅仅是犹太文明，更多是对一个文明的思考。作为一名平时喜欢画些小漫画的同学，我选择创意作业，设计了“ShalomShtickers”犹太文明表情包。Shalom：平安（希伯来语），Shtickers：表情包（意第绪语）。希望各位朋友喜欢，欢迎大家下载收藏使用噢~~</p>
+                            <div class="english-translation">
+                                I am Liang Zhiwan, an undergraduate student at the School of Economics, Peking University. I feel very fortunate to have taken the general education course “Jewish Civilization in a Global Context” this semester. Through Professor YANG Meng’s lively, humorous, and contemporary teaching, I gained much more than knowledge of Jewish civilization itself; the course also encouraged me to think more deeply about what a civilization means. As someone who enjoys drawing small comics in my spare time, I chose the creative assignment and designed “ShalomShtickers,” a Jewish-civilization-themed sticker pack. “Shalom” means peace in Hebrew, while “Shtickers” refers to stickers in Yiddish. I hope you enjoy them, and you are very welcome to save and use them!
+                            </div>
+                        </div>
+                        <button type="button" class="project-gallery-btn" id="openShalomGallery">
+                            <i class="fas fa-images"></i> 查看全部 17 张
+                        </button>
+                    </div>
+                </div>
             </div>
             
             <!-- 评论区 -->
@@ -1227,6 +1576,41 @@
             <i class="fas fa-arrow-up"></i>
         </div>
     </section>
+
+
+
+    <!-- 项目30：ShalomShtickers 全屏画廊 -->
+    <div class="gallery-modal" id="shalomGallery" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="shalomGalleryTitle">
+        <div class="gallery-shell">
+            <div class="gallery-header">
+                <div class="gallery-title-group">
+                    <div class="gallery-title" id="shalomGalleryTitle">ShalomShtickers · 犹太文明表情包</div>
+                    <div class="gallery-subtitle">梁芷菀 · 北京大学经济学院</div>
+                </div>
+                <button type="button" class="gallery-close" id="closeShalomGallery" aria-label="关闭画廊">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="gallery-stage" id="shalomGalleryStage">
+                <button type="button" class="gallery-nav gallery-prev" id="shalomPrev" aria-label="上一张">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <img src="images/30 (1).jpeg" alt="ShalomShtickers 第1张作品" class="gallery-main-image" id="shalomMainImage">
+
+                <button type="button" class="gallery-nav gallery-next" id="shalomNext" aria-label="下一张">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="gallery-footer">
+                <div class="gallery-counter"><strong id="shalomCurrent">01</strong> / 17</div>
+                <div class="gallery-thumbnails" id="shalomThumbnails" aria-label="作品缩略图导航"></div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -1323,5 +1707,145 @@
             });
         });
     </script>
+
+    <script>
+        // 项目30：ShalomShtickers 17图画廊
+        document.addEventListener('DOMContentLoaded', function() {
+            const shalomImages = [
+                'images/30 (1).jpeg',
+                'images/30 (2).jpeg',
+                'images/30 (3).jpeg',
+                'images/30 (4).jpeg',
+                'images/30 (5).jpeg',
+                'images/30 (6).jpeg',
+                'images/30 (7).jpeg',
+                'images/30 (8).jpeg',
+                'images/30 (9).jpeg',
+                'images/30 (10).jpeg',
+                'images/30 (11).jpeg',
+                'images/30 (12).jpeg',
+                'images/30 (13).jpeg',
+                'images/30 (14).jpeg',
+                'images/30 (15).jpeg',
+                'images/30 (16).jpeg',
+                'images/30 (17).png'
+            ];
+
+            const gallery = document.getElementById('shalomGallery');
+            const openButton = document.getElementById('openShalomGallery');
+            const closeButton = document.getElementById('closeShalomGallery');
+            const prevButton = document.getElementById('shalomPrev');
+            const nextButton = document.getElementById('shalomNext');
+            const mainImage = document.getElementById('shalomMainImage');
+            const currentLabel = document.getElementById('shalomCurrent');
+            const thumbnails = document.getElementById('shalomThumbnails');
+            const galleryStage = document.getElementById('shalomGalleryStage');
+
+            if (!gallery || !openButton || !mainImage || !thumbnails) return;
+
+            let currentIndex = 0;
+            let touchStartX = null;
+            let previousBodyOverflow = '';
+
+            shalomImages.forEach(function(src, index) {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'gallery-thumbnail';
+                button.setAttribute('aria-label', '查看第' + (index + 1) + '张作品');
+
+                const image = document.createElement('img');
+                image.src = src;
+                image.alt = 'ShalomShtickers 第' + (index + 1) + '张缩略图';
+                image.loading = 'lazy';
+
+                button.appendChild(image);
+                button.addEventListener('click', function() {
+                    showImage(index);
+                });
+                thumbnails.appendChild(button);
+            });
+
+            const thumbnailButtons = Array.from(thumbnails.querySelectorAll('.gallery-thumbnail'));
+
+            function showImage(index) {
+                currentIndex = (index + shalomImages.length) % shalomImages.length;
+                mainImage.src = shalomImages[currentIndex];
+                mainImage.alt = 'ShalomShtickers 第' + (currentIndex + 1) + '张作品';
+                currentLabel.textContent = String(currentIndex + 1).padStart(2, '0');
+
+                thumbnailButtons.forEach(function(button, buttonIndex) {
+                    const isActive = buttonIndex === currentIndex;
+                    button.classList.toggle('active', isActive);
+                    button.setAttribute('aria-current', isActive ? 'true' : 'false');
+                });
+
+                const activeThumbnail = thumbnailButtons[currentIndex];
+                if (activeThumbnail) {
+                    activeThumbnail.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest',
+                        inline: 'center'
+                    });
+                }
+            }
+
+            function openGallery() {
+                previousBodyOverflow = document.body.style.overflow;
+                gallery.classList.add('active');
+                gallery.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                showImage(0);
+                closeButton.focus();
+            }
+
+            function closeGallery() {
+                gallery.classList.remove('active');
+                gallery.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = previousBodyOverflow;
+                openButton.focus();
+            }
+
+            openButton.addEventListener('click', openGallery);
+            closeButton.addEventListener('click', closeGallery);
+            prevButton.addEventListener('click', function() { showImage(currentIndex - 1); });
+            nextButton.addEventListener('click', function() { showImage(currentIndex + 1); });
+
+            gallery.addEventListener('click', function(event) {
+                if (event.target === gallery || event.target === galleryStage) {
+                    closeGallery();
+                }
+            });
+
+            document.addEventListener('keydown', function(event) {
+                if (!gallery.classList.contains('active')) return;
+
+                if (event.key === 'Escape') {
+                    closeGallery();
+                } else if (event.key === 'ArrowLeft') {
+                    showImage(currentIndex - 1);
+                } else if (event.key === 'ArrowRight') {
+                    showImage(currentIndex + 1);
+                }
+            });
+
+            galleryStage.addEventListener('touchstart', function(event) {
+                touchStartX = event.changedTouches[0].clientX;
+            }, { passive: true });
+
+            galleryStage.addEventListener('touchend', function(event) {
+                if (touchStartX === null) return;
+                const touchEndX = event.changedTouches[0].clientX;
+                const distance = touchEndX - touchStartX;
+
+                if (Math.abs(distance) > 55) {
+                    showImage(distance > 0 ? currentIndex - 1 : currentIndex + 1);
+                }
+                touchStartX = null;
+            }, { passive: true });
+
+            showImage(0);
+        });
+    </script>
+
 </body>
 </html>
