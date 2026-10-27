@@ -357,42 +357,7 @@
             margin-right: 8px;
         }
         
-        /* 评论区样式 */
-        .comments-section {
-            margin-top: 100px;
-            padding: 60px;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-        
-        .comments-title {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            font-weight: 600;
-            text-align: center;
-            color: var(--light-gold);
-            font-family: 'Cormorant Garamond', serif;
-        }
-        
-        .comment-form {
-            margin-bottom: 50px;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius);
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 500;
-            color: var(--light-gold);
-        }
-        
+        /* 搜索输入框 */
         .form-control {
             width: 100%;
             padding: 15px 20px;
@@ -410,79 +375,6 @@
             border-color: var(--accent-gold);
             box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
             background: rgba(255, 255, 255, 0.12);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background: transparent;
-            color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            padding: 15px 35px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Cormorant Garamond', serif;
-        }
-        
-        .submit-btn:hover {
-            background: var(--accent-gold);
-            color: var(--dark-bg);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-        
-        .comments-list {
-            margin-top: 50px;
-        }
-        
-        .comment {
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius);
-            margin-bottom: 25px;
-            border-left: 3px solid var(--accent-gold);
-            transition: var(--transition);
-        }
-        
-        .comment:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateX(5px);
-        }
-        
-        .comment-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        
-        .comment-author {
-            font-weight: 600;
-            color: var(--light-gold);
-            font-family: 'Cormorant Garamond', serif;
-        }
-        
-        .comment-date {
-            color: var(--muted-text);
-            font-size: 0.9rem;
-        }
-        
-        .comment-text {
-            line-height: 1.7;
-            color: var(--light-text);
-            margin-bottom: 10px;
-        }
-        
-        .comment-translation {
-            font-size: 0.85rem;
-            color: rgba(176, 184, 197, 0.7);
-            font-style: italic;
-            line-height: 1.6;
         }
         
         /* 联系方式部分 */
@@ -622,11 +514,7 @@
                 gap: 30px;
             }
             
-            .comments-section {
-                padding: 40px 20px;
-            }
-            
-            .comment-form {
+.comment-form {
                 padding: 30px 20px;
             }
             
@@ -966,6 +854,19 @@
         }
 
     </style>
+    <style>
+[hidden] { display: none !important; }
+.project-search { max-width: 800px; margin: -20px auto 35px; }
+.project-search label { display: block; color: var(--light-gold); margin-bottom: 12px; }
+.search-input-row { display: flex; gap: 18px; align-items: center; }
+.search-input-row .form-control { min-width: 0; }
+.search-input-row button { flex-shrink: 0; }
+.project-search .form-help { margin-bottom: 0; }
+.text-button { padding: 10px 0; border: 0; background: transparent; color: var(--light-gold); font: inherit; cursor: pointer; }
+.text-button:hover { text-decoration: underline; }
+.form-help { color: var(--muted-text); font-size: .9rem; line-height: 1.7; margin-top: 10px; }
+.form-control:focus-visible, .text-button:focus-visible { outline: 2px solid var(--light-gold); outline-offset: 4px; }
+</style>
 </head>
 <body>
     <!-- 封面页（已添加中英文双语） -->
@@ -997,7 +898,15 @@
                 </p>
             </header>
             
-            <div class="projects-grid">
+            <form class="project-search" id="project-search-form" role="search" aria-label="搜索课程作品">
+                <label for="project-search">搜索作品</label>
+                <div class="search-input-row">
+                    <input type="search" id="project-search" class="form-control" maxlength="120" placeholder="输入作品标题、作者或说明中的关键词" autocomplete="off">
+                    <button type="button" class="text-button" id="clear-search">清空</button>
+                </div>
+                <p id="search-status" class="form-help" role="status" aria-live="polite"></p>
+            </form>
+            <div class="projects-grid" id="original-projects">
                 <!-- 项目1 -->
                 <div class="project-card fade-in">
                     <img src="images/001.webp" alt="编织犹太娃娃" class="project-image" loading="lazy">
@@ -1484,55 +1393,6 @@
                 </div>
             </div>
             
-            <!-- 评论区 -->
-            <div class="comments-section">
-                <h2 class="comments-title">评论区</h2>
-                
-                <div class="comment-form">
-                    <h3>发表评论</h3>
-                    <div class="form-group">
-                        <label for="comment-name">姓名</label>
-                        <input type="text" id="comment-name" class="form-control" placeholder="请输入您的姓名">
-                    </div>
-                    <div class="form-group">
-                        <label for="comment-email">邮箱</label>
-                        <input type="email" id="comment-email" class="form-control" placeholder="请输入您的邮箱">
-                    </div>
-                    <div class="form-group">
-                        <label for="comment-text">评论内容</label>
-                        <textarea id="comment-text" class="form-control" placeholder="请分享您的想法..."></textarea>
-                    </div>
-                    <button class="submit-btn" id="submit-comment">提交评论</button>
-                </div>
-                
-                <div class="comments-list" id="comments-list">
-                    <div class="comment">
-                        <div class="comment-header">
-                            <span class="comment-author">张明</span>
-                            <span class="comment-date">2025-03-15</span>
-                        </div>
-                        <div class="comment-text">
-                            这些作品展现了学生们的创意和对犹太文化的深刻理解，令人印象深刻！
-                        </div>
-                        <div class="comment-translation">
-                            These works showcase students' creativity and deep understanding of Jewish culture, very impressive!
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <div class="comment-header">
-                            <span class="comment-author">李华</span>
-                            <span class="comment-date">2025-03-10</span>
-                        </div>
-                        <div class="comment-text">
-                            特别喜欢金焰流光作品，将中国传统工艺与犹太文化符号完美结合。
-                        </div>
-                        <div class="comment-translation">
-                            I particularly like the Golden Flame Radiance work, which perfectly combines traditional Chinese craftsmanship with Jewish cultural symbols.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
             <!-- 联系方式部分 -->
             <div class="contact-section">
                 <h2 class="contact-title">
@@ -1618,8 +1478,6 @@
             const coverPage = document.getElementById('coverPage');
             const contentPage = document.getElementById('contentPage');
             const backToTop = document.getElementById('backToTop');
-            const submitCommentBtn = document.getElementById('submit-comment');
-            const commentsList = document.getElementById('comments-list');
             
             // 点击"开始探索"按钮
             exploreBtn.addEventListener('click', function() {
@@ -1669,42 +1527,6 @@
                 });
             });
             
-            // 评论提交功能
-            submitCommentBtn.addEventListener('click', function() {
-                const name = document.getElementById('comment-name').value;
-                const email = document.getElementById('comment-email').value;
-                const text = document.getElementById('comment-text').value;
-                
-                if (!name || !email || !text) {
-                    alert('请填写所有字段');
-                    return;
-                }
-                
-                // 创建新评论
-                const newComment = document.createElement('div');
-                newComment.className = 'comment';
-                newComment.innerHTML = `
-                    <div class="comment-header">
-                        <span class="comment-author">${name}</span>
-                        <span class="comment-date">${new Date().toISOString().split('T')[0]}</span>
-                    </div>
-                    <div class="comment-text">${text}</div>
-                    <div class="comment-translation">
-                        [English translation would appear here for bilingual comments]
-                    </div>
-                `;
-                
-                // 添加到评论列表顶部
-                commentsList.prepend(newComment);
-                
-                // 清空表单
-                document.getElementById('comment-name').value = '';
-                document.getElementById('comment-email').value = '';
-                document.getElementById('comment-text').value = '';
-                
-                // 显示成功消息
-                alert('评论提交成功！');
-            });
         });
     </script>
 
@@ -1847,5 +1669,48 @@
         });
     </script>
 
+    <script>
+function normalizeSearchQuery(value = '') {
+  if (typeof value !== 'string') throw new Error('搜索词格式无效。');
+  if ([...value].length > 120) throw new Error('搜索词不能超过 120 个字。');
+  const text = value.normalize('NFKC').toLocaleLowerCase().trim();
+  const terms = text ? text.split(/\s+/u) : [];
+  if (terms.length > 10) throw new Error('一次最多输入 10 个搜索词。');
+  return terms;
+}
+
+function matchesSearch(text, query) {
+  const terms = Array.isArray(query) ? query : normalizeSearchQuery(query);
+  const normalized = String(text).normalize('NFKC').toLocaleLowerCase();
+  return terms.every(term => normalized.includes(term));
+}
+
+
+function initSearch(document) {
+  const form = document.querySelector('#project-search-form');
+  const input = document.querySelector('#project-search');
+  const status = document.querySelector('#search-status');
+  const cards = [...document.querySelectorAll('#original-projects .project-card')];
+  const entries = cards.map(card => ({ card, text: card.textContent }));
+  function update() {
+    let terms;
+    try { terms = normalizeSearchQuery(input.value); }
+    catch (error) { status.textContent = error.message; return; }
+    let count = 0;
+    for (const { card, text } of entries) {
+      card.hidden = !matchesSearch(text, terms);
+      if (!card.hidden) count++;
+    }
+    status.textContent = !terms.length ? `共 ${cards.length} 个作品，可按标题、作者或说明搜索。` : count ? `找到 ${count} 个作品。` : '没有找到匹配的作品，请换个关键词。';
+  }
+  form.addEventListener('submit', event => { event.preventDefault(); update(); });
+  input.addEventListener('input', update);
+  document.querySelector('#clear-search').addEventListener('click', () => { input.value = ''; update(); input.focus(); });
+  update();
+}
+
+if (typeof document !== 'undefined') initSearch(document);
+</script>
 </body>
 </html>
+
